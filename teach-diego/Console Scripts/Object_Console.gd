@@ -15,8 +15,8 @@ func _init() -> void:
 	await_for_property_change()
 	await await_finished
 	print("See! I awaited for my waiting to be finished")
-	
 	print("Although, it is instantaneous since I cant sense time like you can\n")
+	print("I am not within the tree until I am created or added through a node or script.")
 
 signal await_finished
 func await_for_property_change():
