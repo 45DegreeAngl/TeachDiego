@@ -12,3 +12,7 @@ func _ready()->void:
 	print(get_tree(),"\nThis is the scene tree!\nIt holds everything that can be seen and interacted with.")
 	
 	print("It holds all nodes that are currently running in the processes and calling functions")
+	
+
+func demo()->void:
+	pass

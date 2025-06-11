@@ -1,0 +1,5 @@
+Hello, I am a text file, or a .txt
+
+Normally created through Notepad, but I can exist right here
+
+I cannot be loaded through conventional means because I have no fancy godot stuff to offer.

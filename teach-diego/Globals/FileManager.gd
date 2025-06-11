@@ -1,6 +1,6 @@
 extends Node
 
-const DIRECTORY_PATH: String = "res://Console Scripts/"
+const DEMO_PATH: String = "res://Demos/"
 
 func scan_directory_iterative(start_path: String) -> Array:
 	var files: Array = []
@@ -30,7 +30,10 @@ func scan_directory_iterative(start_path: String) -> Array:
 	return files
 
 func _ready():
-	var file_paths = scan_directory_iterative(DIRECTORY_PATH)
+	demo_files_in_path(DEMO_PATH)
+
+func demo_files_in_path(path:String):
+	var file_paths = scan_directory_iterative(path)
 	print(file_paths)  # Displays the collected file paths
 	for file:String in file_paths:
 		if load(file):
@@ -41,8 +44,20 @@ func _ready():
 					var temp_node : Node = Node.new()
 					temp_node.set_script(temp)
 					add_child(temp_node)
-					
 					temp_node.call_deferred("queue_free")
-					
-					
-		
+			elif temp is Node:
+				add_child(temp)
+		else:
+			var temp = FileAccess.open(file,FileAccess.READ_WRITE)
+			
+			print("This file (",file,") cannot be loaded by conventional means, so instead we are using FileAccess to classically read/write files")
+			
+			print("You can advance through the file by a pointer[like in C]")
+			print("But don\'t worry about that because we can file.get_as_text()")
+			var temp_as_text : String = temp.get_as_text()
+			
+			print("This is the text: \n",temp_as_text)
+			
+			print("You can open any file as text, but it might not always make sense")
+			
+			temp.close()

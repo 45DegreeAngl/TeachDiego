@@ -1,0 +1,6 @@
+[gd_resource type="SyntaxHighlighter" load_steps=2 format=3 uid="uid://d1d0pdcnldta3"]
+
+[ext_resource type="Script" uid="uid://djtdofk8r2qa3" path="res://Resources/godot syntax highlighter.gd" id="1_fenyb"]
+
+[resource]
+script = ExtResource("1_fenyb")
